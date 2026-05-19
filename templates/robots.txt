@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Disallow: /config
+Disallow: /backup
+Allow: /api/document
+Allow: /api/v2/
+
+# Note: API documentation available at /api/document
+# Current API version: v2

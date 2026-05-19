@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">TechBlog</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/api/document">API Docs</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to TechBlog</h1>
+            <p>Your source for technology news, tutorials, and insights</p>
+        </section>
+
+        <section class="blog-posts">
+            <h2>Latest Posts</h2>
+            {% for post in posts %}
+            <article class="post">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content }}</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>Web Security Book</h3>
+                    <p>Learn about web vulnerabilities</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h3>API Development Course</h3>
+                    <p>Master REST API development</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TechBlog. Check our</p>
+    </footer>
+</body>
+</html>
